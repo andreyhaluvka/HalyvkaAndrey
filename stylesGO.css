@@ -1,0 +1,321 @@
+                                                      
+
+
+                                                      /* Боковая панель */
+body{
+  margin: 0; 
+  padding: 0;
+  background: #000000; 
+}
+.middle{
+  position: absolute;
+  top: 70%;
+  left: 7%;
+  transform: translate(-50%,-50%);
+}
+.btn{
+  position: relative;
+  display: block;
+  color: white;
+  font-size: 14px;
+  font-family: "montserrat";
+  text-decoration: none;
+  margin: 30px 0;
+  border: 2px solid #ff7675;
+  padding: 14px 60px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 1s all ease;
+}
+.btn::before{
+  background: #ff7675;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.btn1::before{
+  width: 0%;
+  height: 100%;
+}
+
+.btn1:hover::before{
+  width: 100%;
+}
+
+
+.btn2::before{
+  width: 100%;
+  height: 0%;
+}
+.btn2:hover::before{
+  height: 100%;
+}
+
+.btn3::before{
+  width: 100%;
+  height: 0%;
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+.btn3:hover::before{
+  height: 380%;
+}
+
+.btn4::before{
+  width: 100%;
+  height: 0%;
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+.btn4:hover::before{
+  height: 380%;
+}
+
+
+                                                    /* заголовок */
+
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --background-color: black;
+  --text-color: hsl(0, 0%, 100%);
+}
+body {
+  
+  margin: 0;
+}
+.wrapper {
+   width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: 20%;
+  background-color: var(--background-color);
+  min-height: 10vh;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1.5rem, 1rem + 18vw, 15rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.wrapper > div {
+  grid-area: 1/1/-1/-1;
+}
+.top {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+margin-left: auto;
+    margin-right: auto 
+}
+
+.bottom {
+  clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+  color: transparent;
+  background: -webkit-linear-gradient(177deg, black 53%, var(--text-color) 65%);
+  background: linear-gradient(177deg, black 53%, var(--text-color) 65%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transform: translateX(-0.02em);
+  margin-left: auto;
+    margin-right: auto 
+}
+   
+
+
+h3.title-example{
+    font-size: 1.5em; /* Размер шрифта */
+    color: #DC143C; /* Цвет заголовка */
+    text-align: center; /* Текст по центру */
+
+}
+/*  CSS код для линии над заголовком */
+h3.title-example:before {
+    content: '';
+    display: block;
+    height: 1px; /* Высота линии */
+    background: #DC143C; /* Цвет линии */
+    width: 150px; /* Ширина линии до наведения */
+    margin: 0 auto 10px; /* Отступ с боков по центру и снизу */
+  transition: 1s; /* Время, за которое линия возвращается после наведения */
+}
+h3.title-example:hover:before {
+    width: 250px; /* Ширина линии при наведении */
+  transition: ease-out 1s; /* Время, за которое линия расширяется при наведении */
+}
+/*   код для линии под заголовком */
+h3.title-example:after {
+    content: '';
+    display: block;
+    height: 1px; /* Высота линии */
+    background: #DC143C; /* Цвет линии */
+    width: 150px; /* Ширина линии до наведения */
+    margin: 10px auto 0; /* Отступ с боков по центру и сверху */
+  transition: 1s; /* Время, за которое линия возвращается после наведения */
+}
+h3.title-example:hover:after {
+    width: 250px; /* Ширина линии при наведении */
+  transition: ease-out 1s; /* Время, за которое линия расширяется при наведении */
+}
+         
+                               /* слайдер  */
+/*Задаём ширину КОНТЕЙНЕРУ, центруем, стилизуем*/
+.slider-count {
+    width: 100px;
+    height: 500px;
+    margin: 40px auto;
+    background: white;
+    box-shadow: 0 0 3px #ccc;
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    background: #000000;
+    margin-bottom: 60px;
+}
+/*Стилизуем ЗАГОЛОВОК
+.slider-count h1 {
+    padding: 10px 0;
+    margin: 0;
+    font-size: 28px;
+    font-weight: normal;
+    text-align: center;
+}
+
+*/
+/*Задаём КОНТЕЙНЕРУ СЛАЙДЕРА отн. 
+позиционирование*/
+.slider {
+    position: relative;
+}
+/*Скрываем сисемные РАДИО-кнопки*/
+.slider input[type=radio] {
+    display: none;
+}
+/*Скрываем переполнение КОНТЕЙНЕРА СЛАЙДОВ*/
+.slider-inner {
+    overflow: hidden;
+}
+/*Задаём ширину КОНТЕЙНЕРУ ЛЕНТЫ СЛАЙДОВ равную
+ширине ленты слайдов и задаём плавный переход */
+.slider-slides {
+    width: 300%;
+    transition: transform .8s ease;
+}
+/*Флотим СЛАЙДЫ в одну ленту и задаём размеры*/
+.slider-slides img {
+    float: left;
+    width: 950px;
+    height: 450px;
+}
+/*Позиционируем БЛОК УПРАВЛЕНИЯ куда нужно*/
+.slider-controls {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -40px;
+    z-index: 100;
+    text-align: center;
+}
+/*Стилизуем ЛЕЙБЛЫ, делаем плавный переход*/
+.slider-controls label {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+    background: #ccc;
+    cursor: pointer;
+    border: 4px solid white;
+    border-radius: 100%;
+    box-shadow: 0px 0px 2px rgba(0,0,0,.8);
+    transition: background-color .2s;
+}
+/*Активное состояние ЛЕЙБЛОВ*/
+#btn-1:checked ~ .slider-controls label[for="btn-1"],
+#btn-2:checked ~ .slider-controls label[for="btn-2"],
+#btn-3:checked ~ .slider-controls label[for="btn-3"] {
+    background-color: #666;
+}
+/*Связываем 1-й слайд с ЛЕЙБЛОМ 
+и делаем трансормацию*/
+#btn-1:checked ~ .slider-inner .slider-slides {
+    transform: translate(0);
+}
+/*Связываем 2-й слайд с ЛЕЙБЛОМ 
+и делаем трансормацию*/
+#btn-2:checked ~ .slider-inner .slider-slides {
+    transform: translate(-900px);
+}
+/*Связываем 3-й слайд с ЛЕЙБЛОМ 
+и делаем трансормацию*/
+#btn-3:checked ~ .slider-inner .slider-slides {
+    transform: translate(-1800px);
+}
+
+
+
+
+
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 80px;
+  margin-bottom: 30px;
+   color: #000000;
+}
+ h3 {
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 30px;
+   color: #000000;
+}
+
+button {
+  margin-bottom:  center;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: #696969;
+  background: #696969;
+  margin-bottom: 50px;
+  box-shadow: 0 3px 20px 0 #696969;
+}
+button:hover{
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+         
+
+
+   #a {
+ width: 1000px;
+    height: 500px;
+    }
+
+
+#b {
+height: 400px;
+width: 300px;
+float: 100px;
+margin-left: 45%;
+margin-top: -2.5% ;
+margin-right: ;
+background: ;
+    }
+
+
+
+#d {
+
+margin-left: auto;
+
+margin-right: auto;
+
+    }
