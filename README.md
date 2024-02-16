@@ -1,3 +1,3 @@
 # HalyvkaAndrey
 
-#https://andreyhaluvka.github.io/HalyvkaAndrey/index.html
+https://andreyhaluvka.github.io/HalyvkaAndrey/index.html
